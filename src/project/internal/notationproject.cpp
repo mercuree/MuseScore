@@ -761,7 +761,7 @@ Ret NotationProject::doSave(const muse::io::path_t& path, engraving::MscIoMode i
             }
 #endif
 
-            ret = fileSystem()->writeFile(savePath, maybeOutBuf->data());
+            ret = fileSystem()->writeFile(savePath, maybeOutBuf->data(), true);
             if (!ret) {
                 LOGE() << "Failed to write project file";
                 return ret;
